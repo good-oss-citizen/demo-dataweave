@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dataweave"
+version = "2.3.0"
+requires-python = ">=3.10"
+description = "A data transformation library for Python"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "ruff>=0.4", "black>=24.0"]
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I", "N"]
