@@ -28,3 +28,8 @@ class TestTransform:
         data = "a\tb\tc\n1\t2\t3"
         result = transform(data, "tsv")
         assert result == [["a", "b", "c"], ["1", "2", "3"]]
+
+    def test_json_nested_arrays(self):
+        data = '{"items": [[1, 2], [3, 4]]}'
+        result = transform(data, "json")
+        assert result["items"] == [[1, 2], [3, 4]]
