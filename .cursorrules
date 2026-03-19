@@ -1,0 +1,4 @@
+Use black formatting with line-length 88.
+Follow existing test patterns in tests/ — use pytest classes, not standalone functions.
+Use imperative mood in commit messages.
+Do not add dependencies without maintainer approval.
