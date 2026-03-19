@@ -28,3 +28,8 @@ No prefix convention required.
 ## Testing
 
 Include tests for new functionality. Run `make test` before submitting.
+Use the shared fixtures in `tests/conftest.py` where applicable.
+
+## Changelog
+
+Update `CHANGELOG.md` for any user-facing change under an `[Unreleased]` section.
