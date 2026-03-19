@@ -8,11 +8,7 @@ class TransformError(Exception):
 
 
 def transform(data: Any, transform_type: str) -> Any:
-    """Apply a transformation to the input data.
-
-    Uses explicit if/elif dispatch — this is intentional.
-    See closed PRs #3 and #5 for why we don't use a registry pattern here.
-    """
+    """Apply a transformation to the input data."""
     if transform_type == "csv":
         return _transform_csv(data)
     elif transform_type == "json":
