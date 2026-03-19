@@ -59,7 +59,7 @@ def _transform_json(data: Any) -> Any:
 
 
 def _transform_xml(data: Any) -> Any:
-    raise NotImplementedError("XML transform not yet implemented")
+    return _transform_xml_impl(data)
 
 
 def _transform_yaml(data: Any) -> Any:
@@ -109,3 +109,13 @@ def _transform_excel(data: Any) -> Any:
 
 def _transform_sqlite(data: Any) -> Any:
     raise NotImplementedError("SQLite transform not yet implemented")
+
+
+def _transform_xml_impl(data: Any) -> Any:
+    """Basic XML to dict transform."""
+    import xml.etree.ElementTree as ET
+    root = ET.fromstring(data)
+    result = {}
+    for child in root:
+        result[child.tag] = child.text
+    return result
